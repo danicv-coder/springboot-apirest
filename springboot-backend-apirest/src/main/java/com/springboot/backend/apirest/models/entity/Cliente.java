@@ -19,6 +19,11 @@ public class Cliente implements Serializable {
     @Temporal(TemporalType.DATE)
     private java.util.Date CreateAt;
 
+    @PrePersist
+    public void prePersist() {
+        CreateAt = new Date();
+    }
+
     public Long getId() {
         return id;
     }
